@@ -14,10 +14,10 @@ var path = require('path');
 var api = new ParseServer({
   databaseURI:   'mongodb://heroku_dr6w56b3:492euksanr6vkf0atdaqlpko5v@ds115543.mlab.com:15543/heroku_dr6w56b3',
   cloud:   __dirname + '/cloud/main.js',
-  appId:   'dl6ue4DVsELPclJ0WmNm',
+  appId:   '15RYufVckHRRd0EiRlV9',
 
-  masterKey:  'Dt1EdqW6q4tCVBr1RgRt', //Add your master key here. Keep it secret!
-  serverURL:  'https://myaperocampus.herokuapp.com/parse',  // Don't forget to change to https if needed
+  masterKey:  'EEjQ4Mjrqp36FGEPehEB', //Add your master key here. Keep it secret!
+  serverURL:  'https://eventroad.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },push: {
