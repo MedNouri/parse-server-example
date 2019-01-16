@@ -24,21 +24,7 @@ var api = new ParseServer({
     android: {
       apiKey: 'AAAAsh9sl2s:APA91bFjoSwDv8TZYyt_bKQHyDRFD3BAx7FGYm5J1DDyUQVSiD9kCdJ8s0bmOP4FbJGXvazuZ8eLuJIKVUaJcU3i-QXig-CprjSS7RZPOatm8BY8ymKXC5JclkIQ_Xkr2Shqrtx9sjOr'
     }}
-}); /* var api = new ParseServer({
-  databaseURI:   'mongodb://mehdi:azerty12303@ds123003.mlab.com:23003/heroku_jk63zqfh',
-  cloud:   __dirname + '/cloud/main.js',
-  appId:   'aaa',
-
-  masterKey:  'aaaa', //Add your master key here. Keep it secret!
-  serverURL:  'http://myaperotest.herokuapp.com/parse',  // Don't forget to change to https if needed
-  liveQuery: {
-    classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  },push: {
-    android: {
-      apiKey: 'AAAAsh9sl2s:APA91bFjoSwDv8TZYyt_bKQHyDRFD3BAx7FGYm5J1DDyUQVSiD9kCdJ8s0bmOP4FbJGXvazuZ8eLuJIKVUaJcU3i-QXig-CprjSS7RZPOatm8BY8ymKXC5JclkIQ_Xkr2Shqrtx9sjOr'
-    }}
-}); */
- 
+}); 
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
