@@ -12,7 +12,7 @@ var path = require('path');
 // }
 
 var api = new ParseServer({
-  databaseURI:   'mongodb://heroku_dr6w56b3:492euksanr6vkf0atdaqlpko5v@ds115543.mlab.com:15543/heroku_dr6w56b3',
+  databaseURI:   'mongodb://heroku_ks3sh6jj:1d44pek1cdm62t1conha23f6a8@ds129904.mlab.com:29904/heroku_ks3sh6jj',
   cloud:   __dirname + '/cloud/main.js',
   appId:   '15RYufVckHRRd0EiRlV9',
 
