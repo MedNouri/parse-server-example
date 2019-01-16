@@ -28,15 +28,4 @@ Parse.Cloud.define('sendPush', function (request, response) {
 	//	response.json('success');
 });
 
-Parse.Cloud.define("averageStars", async (request) => {
-	const query = new Parse.Query("Reviews");
-	query.equalTo("targetIdemail", request.params.email);
-	const results = await query.find();
-	let sum = 0;
-let account = results.length ;
-	for (let i = 0; i < account; ++i) {
-		sum += results[i].get("ratingValue");
-
-	}
-	return ({ "sum": sum / account , "count":account });
-});
+ 
