@@ -30,10 +30,20 @@
  	//	response.json('success');
  });
  Parse.Cloud.beforeSave(Parse.User, (request) => {
+ 	var err;
  	if (!validateEmail(request.object.get("email"))) {
- 		throw "email invalide";
+ 		err += "email invalide";
  	}
+ 	if (request.object.get("name").length == 0) {
+ 		err += "and name was null"
 
+ 	}
+ 	if (request.object.get("company") == null) {
+ 		err += "and company was null"
+
+ 	}
+ 	if (err.length != null)
+ 		throw err;
 
  });
 
