@@ -34,7 +34,7 @@
  	if (!validateEmail(request.object.get("email"))) {
  		err += "email invalide";
  	}
- 	if (request.object.get("name").length == 0) {
+ 	if (request.object.get("firstName").length == 0) {
  		err += "and name was null"
 
  	}
