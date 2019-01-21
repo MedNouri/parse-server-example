@@ -35,7 +35,7 @@ Parse.Cloud.beforeSave(Parse.User, (request) => {
 	if (!validateEmail(request.object.get("email"))) {
 		throw "Can't Creat user if email is invalid .";
 	}
-	if (request.object.get("firstName") == null) {
+	/* if (request.object.get("firstName") == null) {
 		throw "Can't Creat user if name is empty .";
 	}
 	if (request.object.get("lastName") == null) {
@@ -44,12 +44,14 @@ Parse.Cloud.beforeSave(Parse.User, (request) => {
 	if (request.object.get("phone") == null) {
 		throw "Can't Creat user if phone is empty .";
 	}
-	 
+	if (request.object.get("userImage") == null) {
+		throw "Can't Creat user if userImage is empty .";
+	}
 	if (request.object.get("userName") == null) {
 		throw "Can't Creat user if userName is empty .";
 	}if (request.object.get("password") == null) {
 		throw "Can't Creat user if password is empty .";
-	}
+	} */
 });
 
 
