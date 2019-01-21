@@ -64,13 +64,7 @@ var api = new ParseServer({
   push: {
     android: {
       apiKey: 'AIzaSyDIRGhEXKP00RKrS0PiqplkmTVOlL5z3Y8'
-    },
-    ios: {
-      pfx: '/file/path/to/XXX.p12',
-      passphrase: '', // optional password to your p12/PFX
-      bundleId: '',
-      production: false
-    }
+    } 
   }
 
 
