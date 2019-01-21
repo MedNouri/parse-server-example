@@ -18,6 +18,12 @@ var api = new ParseServer({
 
   masterKey: 'EEjQ4Mjrqp36FGEPehEB', //Add your master key here. Keep it secret!
   serverURL: 'https://eventroad.herokuapp.com/parse', // Don't forget to change to https if needed
+
+  push: {
+    android: {
+      apiKey: 'AIzaSyDIRGhEXKP00RKrS0PiqplkmTVOlL5z3Y8'
+    }
+  },
   // liveQuery: {
   //   classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   // },push: {
@@ -60,11 +66,6 @@ var api = new ParseServer({
       // Your API key from mailgun.com
       apiKey: 'af7fb646350c3486c351e26664648ab6-3939b93a-fd198105',
     }
-  },
-  push: {
-    android: {
-      apiKey: 'AIzaSyDIRGhEXKP00RKrS0PiqplkmTVOlL5z3Y8'
-    } 
   }
 
 
