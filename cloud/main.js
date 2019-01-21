@@ -44,9 +44,7 @@ Parse.Cloud.beforeSave(Parse.User, (request) => {
 	if (request.object.get("phone") == null) {
 		throw "Can't Creat user if phone is empty .";
 	}
-	// if (request.object.get("userImage") == null) {
-	// 	throw "Can't Creat user if userImage is empty .";
-	// }
+	 
 	if (request.object.get("userName") == null) {
 		throw "Can't Creat user if userName is empty .";
 	}if (request.object.get("password") == null) {
