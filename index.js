@@ -60,9 +60,20 @@ var api = new ParseServer({
       // Your API key from mailgun.com
       apiKey: 'af7fb646350c3486c351e26664648ab6-3939b93a-fd198105',
     }
+  },
+  push: {
+    android: {
+      apiKey: 'AIzaSyDIRGhEXKP00RKrS0PiqplkmTVOlL5z3Y8'
+    },
+    ios: {
+      pfx: '/file/path/to/XXX.p12',
+      passphrase: '', // optional password to your p12/PFX
+      bundleId: '',
+      production: false
+    }
   }
- 
- 
+
+
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
