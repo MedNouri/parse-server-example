@@ -63,7 +63,7 @@ var api = new ParseServer({
   },
   push: {
     android: {
-      apiKey: ''
+      apiKey: 'AIzaSyDIRGhEXKP00RKrS0PiqplkmTVOlL5z3Y8'
     },
     ios: {
       pfx: '', // The filename of private key and certificate in PFX or PKCS12 format from disk  
