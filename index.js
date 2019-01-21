@@ -12,12 +12,12 @@ var path = require('path');
 // }
 
 var api = new ParseServer({
-  databaseURI:   'mongodb://heroku_ks3sh6jj:1d44pek1cdm62t1conha23f6a8@ds129904.mlab.com:29904/heroku_ks3sh6jj',
-  cloud:   __dirname + '/cloud/main.js',
-  appId:   '15RYufVckHRRd0EiRlV9',
+  databaseURI: 'mongodb://heroku_ks3sh6jj:1d44pek1cdm62t1conha23f6a8@ds129904.mlab.com:29904/heroku_ks3sh6jj',
+  cloud: __dirname + '/cloud/main.js',
+  appId: '15RYufVckHRRd0EiRlV9',
 
-  masterKey:  'EEjQ4Mjrqp36FGEPehEB', //Add your master key here. Keep it secret!
-  serverURL:  'https://eventroad.herokuapp.com/parse',  // Don't forget to change to https if needed
+  masterKey: 'EEjQ4Mjrqp36FGEPehEB', //Add your master key here. Keep it secret!
+  serverURL: 'https://eventroad.herokuapp.com/parse', // Don't forget to change to https if needed
   // liveQuery: {
   //   classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   // },push: {
@@ -26,7 +26,7 @@ var api = new ParseServer({
   //   }},
 
 
-     // Enable email verification
+  // Enable email verification
   verifyUserEmails: true,
 
   // if `verifyUserEmails` is `true` and
@@ -38,7 +38,7 @@ var api = new ParseServer({
   // `emailVerifyTokenValidityDuration` defaults to `undefined`
   //
   // email verify token below expires in 2 hours (= 2 * 60 * 60 == 7200 seconds)
- 
+
   // set preventLoginWithUnverifiedEmail to false to allow user to login without verifying their email
   // set preventLoginWithUnverifiedEmail to true to prevent user from login if their email is not verified
   preventLoginWithUnverifiedEmail: false, // defaults to false
@@ -60,6 +60,19 @@ var api = new ParseServer({
       // Your API key from mailgun.com
       apiKey: 'af7fb646350c3486c351e26664648ab6-3939b93a-fd198105',
     }
+  },
+  push: {
+    android: {
+      apiKey: ''
+    },
+    ios: {
+      pfx: '', // The filename of private key and certificate in PFX or PKCS12 format from disk  
+      passphrase: '', // optional password to your p12
+      cert: '', // If not using the .p12 format, the path to the certificate PEM to load from disk
+      key: '', // If not using the .p12 format, the path to the private key PEM to load from disk
+      bundleId: '', // The bundle identifier associated with your app
+      production: false // Specifies which APNS environment to connect to: Production (if true) or Sandbox
+    }
   }
 
   // account lockout policy setting (OPTIONAL) - defaults to undefined
@@ -68,7 +81,7 @@ var api = new ParseServer({
   //   duration: 5, // duration policy setting determines the number of minutes that a locked-out account remains locked out before automatically becoming unlocked. Set it to a value greater than 0 and less than 100000.
   //   threshold: 3, // threshold policy setting determines the number of failed sign-in attempts that will cause a user account to be locked. Set it to an integer value greater than 0 and less than 1000.
   // }
-  
+
   /* ,
   // optional settings to enforce password policies
   passwordPolicy: {
@@ -84,7 +97,7 @@ var api = new ParseServer({
     //optional setting to set a validity duration for password reset links (in seconds)
     resetTokenValidityDuration: 24*60*60, // expire after 24 hours
   } */
-}); 
+});
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
@@ -99,20 +112,20 @@ var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.status(200).send('I dream of being a startUp .  Please star the parse-server repo on GitHub!');
 });
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
-app.get('/test', function(req, res) {
+app.get('/test', function (req, res) {
   res.sendFile(path.join(__dirname, '/public/test.html'));
 });
 
 var port = process.env.PORT || 1337;
 var httpServer = require('http').createServer(app);
-httpServer.listen(port, function() {
-    console.log('parse-server-example running on port ' + port + '.');
+httpServer.listen(port, function () {
+  console.log('parse-server-example running on port ' + port + '.');
 });
 
 // This will enable the Live Query real-time server
