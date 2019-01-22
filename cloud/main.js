@@ -72,9 +72,9 @@ Parse.Cloud.beforeSave("Company", (request) => {
 	if (request.object.get("companyCity") == null) {
 		throw "Can't Creat company if companyCity is empty .";
 	}
-	if (request.object.get("companyLogo") == null) {
+	/* if (request.object.get("companyLogo") == null) {
 		throw "Can't Creat company if companyLogo is empty .";
-	}
+	} */
 	if (request.object.get("companyAddress") == null) {
 		throw "Can't Creat company if companyAddress is empty .";
 	}
