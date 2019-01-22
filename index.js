@@ -17,13 +17,14 @@ var api = new ParseServer({
   appId: '15RYufVckHRRd0EiRlV9',
 
   masterKey: 'EEjQ4Mjrqp36FGEPehEB', //Add your master key here. Keep it secret!
-  serverURL: 'https://eventroad.herokuapp.com/parse', // Don't forget to change to https if needed
 
   push: {
     android: {
       apiKey: 'AAAAW-O_q5c:APA91bELMX5HIPzR9ZDcHXYo5hvPG0RtM6dQwM_Gq2EaXbKQvPN4SEeaBrc_QTU3m9PqHeNZdZOXaULGfebH_7QthnWzb35AekC7WoCJfFUjajTx1BgBkJPkANELesTEHUN2CkmyNAx2'
     }
   },
+  serverURL: 'https://eventroad.herokuapp.com/parse', // Don't forget to change to https if needed
+
   // liveQuery: {
   //   classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   // },push: {

@@ -35,6 +35,11 @@ Parse.Cloud.beforeSave(Parse.User, (request) => {
 	if (!validateEmail(request.object.get("email"))) {
 		throw "Can't Creat user if email is invalid .";
 	}
+	if(request.object.get("object").get("comp")== null){
+		throw "Can't Creat user if compagnie name is empty .";
+
+
+	}
 	/* if (request.object.get("firstName") == null) {
 		throw "Can't Creat user if name is empty .";
 	}
