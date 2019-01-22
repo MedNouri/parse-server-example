@@ -58,36 +58,38 @@ Parse.Cloud.beforeSave(Parse.User, (request) => {
 Parse.Cloud.beforeSave(Parse.Company, (request) => {
 	var companyType = ["Installateur / Fabriquant", "exposant"]
 
-/* 	if (request.object.get("companyForm") == null) {
-		throw "Can't Creat company if companyForm is empty .";
-	}
-	if (request.object.get("companyNumSiret") == null) {
-		throw "Can't Creat company if companyNumSiret is empty .";
-	} */
+	/* 	if (request.object.get("companyForm") == null) {
+			throw "Can't Creat company if companyForm is empty .";
+		}
+		if (request.object.get("companyNumSiret") == null) {
+			throw "Can't Creat company if companyNumSiret is empty .";
+		} */
 	if (request.object.get("companyName") == null) {
 		throw "Can't Creat company if companyName is empty .";
+	}
+
+	/* 	if (request.object.get("companyName") == null) {
+			throw "Can't Creat company if companyName is empty .";
+		}
+		if (request.object.get("companyCity") == null) {
+			throw "Can't Creat company if companyCity is empty .";
+		}
+		if (request.object.get("companyLogo") == null) {
+			throw "Can't Creat company if companyLogo is empty .";
+		}
+		if (request.object.get("companyAddress") == null) {
+			throw "Can't Creat company if companyAddress is empty .";
+		}
+
+		*/
+	if (request.object.get("companytype") == null) {
+		throw "Can't Creat company if companytype is empty .";
 	} else {
 
-		if (companyType.indexOf(request.object.get("companyName")) == -1)
+		if (companyType.indexOf(request.object.get("companytype")) == -1)
 			throw "Can't Creat company if companyName was invalid .";
 
 	}
-
-/* 	if (request.object.get("companyName") == null) {
-		throw "Can't Creat company if companyName is empty .";
-	}
-	if (request.object.get("companyCity") == null) {
-		throw "Can't Creat company if companyCity is empty .";
-	}
-	if (request.object.get("companyLogo") == null) {
-		throw "Can't Creat company if companyLogo is empty .";
-	}
-	if (request.object.get("companyAddress") == null) {
-		throw "Can't Creat company if companyAddress is empty .";
-	}
-	if (request.object.get("companytype") == null) {
-		throw "Can't Creat company if companytype is empty .";
-	} */
 
 });
 
