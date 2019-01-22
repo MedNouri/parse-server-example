@@ -35,12 +35,7 @@ Parse.Cloud.beforeSave(Parse.User, (request) => {
 	if (!validateEmail(request.object.get("email"))) {
 		throw "Can't Creat user if email is invalid .";
 	}
-	if(request.object.get("object").get("comp")== null){
-		throw "Can't Creat user if compagnie name is empty .";
-
-
-	}
-	/* if (request.object.get("firstName") == null) {
+	if (request.object.get("firstName") == null) {
 		throw "Can't Creat user if name is empty .";
 	}
 	if (request.object.get("lastName") == null) {
@@ -54,12 +49,47 @@ Parse.Cloud.beforeSave(Parse.User, (request) => {
 	}
 	if (request.object.get("userName") == null) {
 		throw "Can't Creat user if userName is empty .";
-	}if (request.object.get("password") == null) {
+	}
+	if (request.object.get("password") == null) {
 		throw "Can't Creat user if password is empty .";
-	} */
+	}
 });
 
+Parse.Cloud.beforeSave(Parse.Company, (request) => {
+	var companyType = ["Installateur / Fabriquant", "exposant"]
 
+/* 	if (request.object.get("companyForm") == null) {
+		throw "Can't Creat company if companyForm is empty .";
+	}
+	if (request.object.get("companyNumSiret") == null) {
+		throw "Can't Creat company if companyNumSiret is empty .";
+	} */
+	if (request.object.get("companyName") == null) {
+		throw "Can't Creat company if companyName is empty .";
+	} else {
+
+		if (companyType.indexOf(request.object.get("companyName")) == -1)
+			throw "Can't Creat company if companyName was invalid .";
+
+	}
+
+/* 	if (request.object.get("companyName") == null) {
+		throw "Can't Creat company if companyName is empty .";
+	}
+	if (request.object.get("companyCity") == null) {
+		throw "Can't Creat company if companyCity is empty .";
+	}
+	if (request.object.get("companyLogo") == null) {
+		throw "Can't Creat company if companyLogo is empty .";
+	}
+	if (request.object.get("companyAddress") == null) {
+		throw "Can't Creat company if companyAddress is empty .";
+	}
+	if (request.object.get("companytype") == null) {
+		throw "Can't Creat company if companytype is empty .";
+	} */
+
+});
 
 
 
