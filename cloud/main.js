@@ -55,7 +55,7 @@ Parse.Cloud.beforeSave(Parse.User, (request) => {
 	}
 });
 
-Parse.Cloud.beforeSave(Parse.Company, (request) => {
+Parse.Cloud.beforeSave("Company", (request) => {
 	var companyType = ["Installateur / Fabriquant", "exposant"]
 
 	/* 	if (request.object.get("companyForm") == null) {
@@ -77,7 +77,7 @@ Parse.Cloud.beforeSave(Parse.Company, (request) => {
 		if (request.object.get("companyLogo") == null) {
 			throw "Can't Creat company if companyLogo is empty .";
 		}
-		if (request.object.get("companyAddress") == null) {
+		if (request.object.gMet("companyAddress") == null) {
 			throw "Can't Creat company if companyAddress is empty .";
 		}
 
