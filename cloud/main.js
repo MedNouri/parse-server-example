@@ -71,13 +71,14 @@ Parse.Cloud.beforeSave("Review", (request) => {
 
 	if (request.object.get("ratedUser") == null) {
 		throw "Can't Creat Review if ratedUser is empty .";
-	}
+	} 
 	if (request.object.get("stars") == null) {
 		throw "Can't Creat Review if stars is empty .";
 	} else if (request.object.get("stars") > 5 || request.object.get("stars") < 0)
 		throw "Can't Creat Review if stars is invalid .";
 	
-			request.object.get("stars")	= Math.round(request.object.get("stars") * 2) / 2
+					request.object.set("stars",Math.round(request.object.get("stars") * 2) / 2) 
+
 
 })
 // chek user if is valid
