@@ -145,6 +145,7 @@ async function lookForDemandes(Serviceskill, createdBy) {
 
   const query = new Parse.Query("Demande");
   query.equalTo("ended", false)
+   query.notEqualTo("creator",createdBy)
   const results = await query.find();
   let sum = 0;
   for (let i = 0; i < results.length; ++i) {
